@@ -1,3 +1,12 @@
+/*
+*Quadratic
+*
+*Solves Quadratic formula
+*
+*@author Glen Eder, geder@purdue.edu
+*
+*@version Oct 25, 2016
+*/
 import java.lang.Math;
 import javax.swing.*;
 
