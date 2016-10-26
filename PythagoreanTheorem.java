@@ -1,3 +1,12 @@
+/*
+*Pythagorean Theorem
+*
+*Computes Pythagorean Theorem
+*
+*@author Glen Eder, geder@purdue.edu
+*
+*@version Oct 25, 2016
+*/
 import java.lang.Math;
 import javax.swing.*;
 

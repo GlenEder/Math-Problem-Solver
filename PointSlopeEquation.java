@@ -1,3 +1,12 @@
+/*
+*Point Slope Equation
+*
+*Generates function of a line given a point and slope
+*
+*@author Glen Eder, geder@purdue.edu
+*
+*@version Oct 25, 2016
+*/
 import javax.swing.*;
 
 public class PointSlopeEquation {

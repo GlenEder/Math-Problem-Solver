@@ -1,5 +1,5 @@
 /*
-*Math 
+*Math Solver
 *
 *Solves math equations
 *
