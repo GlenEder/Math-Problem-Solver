@@ -14,37 +14,42 @@ public class PythagoreanTheorem {
 
 	public PythagoreanTheorem() {
 
-		double a = 0;
-		double b = 0;
-		double c = 0;
+		Utils util = new Utils();
+
 
 		String[] choices = {"A", "B", "C"};
 		String solveFor = (String) JOptionPane.showInputDialog(null, "Select variable to solve for: ", "Pythagorean Theorem", JOptionPane.QUESTION_MESSAGE, null, choices, choices[2]);
-		
-		switch(solveFor) {
-			case "A":
-				b = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter 'B': "));
-				c = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter 'C': "));
 
-				a = Math.sqrt((Math.pow(c, 2) - Math.pow(b, 2)));
-				JOptionPane.showMessageDialog(null, "A equals: " + a);
+		double x = 0;
+		double y = 0;
+
+		//check for cancel
+		if(solveFor == null) {
+			return;
+		}
+
+		switch (solveFor) {
+			case "A":
+				x = util.fractionToDouble(JOptionPane.showInputDialog(null, "Enter B: "));
+				y = util.fractionToDouble(JOptionPane.showInputDialog(null, "Enter C: "));
+				JOptionPane.showMessageDialog(null, "A: " + util.pythagoreanTheorem(x, y, 'a'));
 				break;
 			case "B":
-				a = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter 'A': "));
-				c = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter 'C': "));
-
-				b = Math.sqrt((Math.pow(c, 2) - Math.pow(a, 2)));
-				JOptionPane.showMessageDialog(null, "B equals: " + b);
+				x = util.fractionToDouble(JOptionPane.showInputDialog(null, "Enter A: "));
+				y = util.fractionToDouble(JOptionPane.showInputDialog(null, "Enter C: "));
+				JOptionPane.showMessageDialog(null, "B: " + util.pythagoreanTheorem(x, y, 'b'));
 				break;
-			case "C": {
-				a = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter 'A': "));
-				b = Double.parseDouble(JOptionPane.showInputDialog(null, "Enter 'B': "));
-
-				c = Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)));
-				JOptionPane.showMessageDialog(null, "C equals: " + c);
+			case "C":
+				x = util.fractionToDouble(JOptionPane.showInputDialog(null, "Enter A: "));
+				y = util.fractionToDouble(JOptionPane.showInputDialog(null, "Enter B: "));
+				JOptionPane.showMessageDialog(null, "C: " + util.pythagoreanTheorem(x, y, 'c'));
 				break;
-			}
+			default:
+				break;
+
+
 		}
+		
 
 
 		

@@ -13,12 +13,13 @@ public class MathSolver {
 
 	public static void main(String[] args) {
 
-		String[] choices = {"Quadratic Formula", "Pythagorean Theorem", "Point Slope Equation", "Derivative: Quotient Rule"};
+		String[] choices = {"Quadratic Formula", "Pythagorean Theorem", "Point Slope Equation", "Derivative Single Function"};
 
 		while(true) {
 		
 			String input = (String) JOptionPane.showInputDialog(null, "Choose Formula: ", "Math Solver", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
 			
+			//check for cancel
 			if(input == null) {
 				System.exit(0);
 			}
@@ -33,9 +34,8 @@ public class MathSolver {
 				case "Point Slope Equation":
 					PointSlopeEquation pse = new PointSlopeEquation();
 					break;
-				case "Derivative: Quotient Rule":
-					DerivativeQuotient dq = new DerivativeQuotient();
-					break;
+				case "Derivative Single Function":
+					Derivative d = new Derivative();
 				default:
 					System.exit(0);
 			}
