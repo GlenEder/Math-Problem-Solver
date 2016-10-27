@@ -28,12 +28,12 @@ public class Utils {
 		double n;
 		double C; 
 		try {
-			C = Double.parseDouble(function.substring(0, function.indexOf("x")));
+			C = fractionToDouble(function.substring(0, function.indexOf("x")));
 		}catch (Exception e) {
 			C = 1;
 		}
 		try{
-			n = Double.parseDouble(function.substring(function.indexOf("^") + 1, function.length()));
+			n = fractionToDouble(function.substring(function.indexOf("^") + 1, function.length()));
 		}catch (Exception e) {
 			n = 1;
 		}
@@ -44,11 +44,49 @@ public class Utils {
 		String solution;
 		if(n != 0) {
 			solution = C + "x^" + n;
-		}else {
+		}else{
 			solution = "" + C;
 		}
 		
 		return solution;
+	}
+
+	/*
+	*computes product rule of derivatives
+	*
+	*@param f1 -- first part of equation
+	*@param f2 -- second part of equation
+	*
+	*@return product -- solution of product rule
+	*/
+	public String productDerivative(String f1, String f2) {
+		String f1d = derivive(f1);
+		String f2d = derivive(f2);
+
+		f1 = formatExpoentFunction(f1);
+		f2 = formatExpoentFunction(f2);
+
+		String product = "(" + f1 + ")(" + f2d + ") + (" + f1d + ")(" + f2 + ")";
+		return product;
+	}
+
+	/*
+	*computes quotient rule of derivatives
+	*
+	*@param f1 -- first part of equation
+	*@param f2 -- second part of equation
+	*
+	*@return product -- solution of quotient rule
+	*/
+	public String quotientDerivative(String f1, String f2) {
+		String f1d = derivive(f1);
+		String f2d = derivive(f2);
+
+		f1 = formatExpoentFunction(f1);
+		f2 = formatExpoentFunction(f2);
+
+		String quotient = "((" + f2 + ")(" + f1d + ") - (" + f2d + ")(" + f1 + ")) / (" + f2 + ")^2";
+		return quotient;
 	}
 	
 	/*
@@ -104,6 +142,20 @@ public class Utils {
 		}else {
 			return Math.sqrt((Math.pow(i, 2) + Math.pow(j, 2)));
 		}
+	}
+
+	public String formatExpoentFunction(String function) {
+		String result = "";
+
+		double c = fractionToDouble(function.substring(0, function.indexOf("x")));
+		if(function.contains("^")) {
+			double n = fractionToDouble(function.substring(function.indexOf("^") + 1, function.length()));
+			result = c + "x^" + n;
+		}else {
+			result = c +"x";
+		}
+
+		return result;
 	}
 
 	
