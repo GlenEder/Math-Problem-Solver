@@ -27,6 +27,11 @@ public class Utils {
 		//Cx^n
 		double n;
 		double C; 
+
+		if(!function.contains("x")) {
+			return "0.0";
+		}
+
 		try {
 			C = fractionToDouble(function.substring(0, function.indexOf("x")));
 		}catch (Exception e) {
@@ -50,6 +55,28 @@ public class Utils {
 		
 		return solution;
 	}
+
+	/*
+	*calculates the derivative at the given point in a function
+	*
+	*@param function -- function to be derivied
+	*@param point -- point at which to find derivative
+	*
+	*@return answer -- slope at point
+	*/
+	public double derivativeAtPoint(String function, double point) {
+		
+		String der = derivive(function);
+		if(!der.contains("x")) {
+			return Double.parseDouble(der);
+		}
+		double c = Double.parseDouble(der.substring(0, der.indexOf("x")));
+		double n = Double.parseDouble(der.substring(der.indexOf("^") + 1, der.length()));
+
+		double answer = c * (Math.pow(point, n));
+		return answer;
+	}
+
 
 	/*
 	*computes product rule of derivatives

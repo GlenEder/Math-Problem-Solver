@@ -13,7 +13,7 @@ public class MathSolver {
 
 	public static void main(String[] args) {
 
-		String[] choices = {"Quadratic Formula", "Pythagorean Theorem", "Point Slope Equation", "Derivative Single Function", "Derivative Product Rule", "Derivative Quotient Rule"};
+		String[] choices = {"Quadratic Formula", "Pythagorean Theorem", "Point Slope Equation", "Derivative Single Function", "Derivative Product Rule", "Derivative Quotient Rule", "Derivative At Point"};
 
 		while(true) {
 		
@@ -41,6 +41,9 @@ public class MathSolver {
 					break;
 				case "Derivative Quotient Rule":
 					DerivativeQuotient dq = new DerivativeQuotient();
+					break;
+				case "Derivative At Point":
+					DerivativeAtPoint dap = new DerivativeAtPoint();
 					break;
 				default:
 					System.exit(0);
