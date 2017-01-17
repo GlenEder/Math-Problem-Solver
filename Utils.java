@@ -185,5 +185,17 @@ public class Utils {
 		return result;
 	}
 
+	public double distanceBetweenTwoPoints3d(double[] firstPoint, double[] secondPoint) {
+		return Math.sqrt((Math.pow(secondPoint[0] - firstPoint[0], 2) + Math.pow(secondPoint[1] - firstPoint[1], 2) + Math.pow(secondPoint[2] - firstPoint[2], 2)));
+	}
+
+	public double getAngleBetweenTwoVectors3d(double[] vector1, double[] vector2) {
+		return Math.acos(((vector1[0] * vector2[0]) + (vector1[1] * vector2[1]) + (vector1[2] * vector2[2])) / (lengthOfVector3d(vector1) * lengthOfVector3d(vector2)));
+	}
+
+	public double lengthOfVector3d(double[] vector) {
+		return Math.sqrt((vector[0] * vector[0]) + (vector[1] * vector[1]) + (vector[2] * vector[2]));
+	}
+
 	
 }

@@ -13,7 +13,9 @@ public class MathSolver {
 
 	public static void main(String[] args) {
 
-		String[] choices = {"Quadratic Formula", "Pythagorean Theorem", "Point Slope Equation", "Derivative Single Function", "Derivative Product Rule", "Derivative Quotient Rule", "Derivative At Point"};
+		String[] choices = {"Quadratic Formula", "Distance Formula(3D)", "Pythagorean Theorem", 
+							"Point Slope Equation", "Derivative Single Function", "Derivative Product Rule",
+							 "Derivative Quotient Rule", "Derivative At Point", "Find Angle Given Two Vectors(3d)"};
 
 		while(true) {
 		
@@ -44,6 +46,12 @@ public class MathSolver {
 					break;
 				case "Derivative At Point":
 					DerivativeAtPoint dap = new DerivativeAtPoint();
+					break;
+				case "Distance Formula(3D)":
+					DistanceFormula3d dfThree = new DistanceFormula3d();
+					break;
+				case "Find Angle Given Two Vectors(3d)":
+					AngleTwoVectors3d angleV = new AngleTwoVectors3d();
 					break;
 				default:
 					System.exit(0);
