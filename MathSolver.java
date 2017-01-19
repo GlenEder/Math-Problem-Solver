@@ -15,7 +15,8 @@ public class MathSolver {
 
 		String[] choices = {"Quadratic Formula", "Distance Formula(3D)", "Pythagorean Theorem", 
 							"Point Slope Equation", "Derivative Single Function", "Derivative Product Rule",
-							 "Derivative Quotient Rule", "Derivative At Point", "Find Angle Given Two Vectors(3d)"};
+							 "Derivative Quotient Rule", "Derivative At Point", "Find Angle Given Two Vectors(3d)",
+							 "Cross Product of Two 3d Vectors"};
 
 		while(true) {
 		
@@ -52,6 +53,9 @@ public class MathSolver {
 					break;
 				case "Find Angle Given Two Vectors(3d)":
 					AngleTwoVectors3d angleV = new AngleTwoVectors3d();
+					break;
+				case "Cross Product of Two 3d Vectors":
+					CrossProduct3dVector cross3d = new CrossProduct3dVector();
 					break;
 				default:
 					System.exit(0);

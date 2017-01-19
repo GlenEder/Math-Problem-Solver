@@ -197,5 +197,15 @@ public class Utils {
 		return Math.sqrt((vector[0] * vector[0]) + (vector[1] * vector[1]) + (vector[2] * vector[2]));
 	}
 
+
+	public double[] crossProductVector3d(double[] v1, double[] v2) {
+		double u1 = (v1[1] * v2[2]) - (v1[2] * v2[1]);
+		double u2 = (v1[2] * v2[0]) - (v1[0] * v2[2]);
+		double u3 = (v1[0] * v2[1]) - (v1[1] * v2[0]);
+		
+		double[] answer = {u1, u2, u3};
+		return answer;
+	}
+
 	
 }
